@@ -49,11 +49,13 @@ export class FormComponent implements OnChanges {
 
   @Input() model: any;
 
-  @Input() actions: {[actionId: string]: Action} = {};
+  @Input() actions: { [actionId: string]: Action } = {};
 
-  @Input() validators: {[path: string]: Validator} = {};
+  @Input() validators: { [path: string]: Validator } = {};
 
-  @Output() onChange = new EventEmitter<{value: any}>();
+  @Output() onChange = new EventEmitter<{ value: any }>();
+
+  @Output() onErrorsChange = new EventEmitter<{ errors: any }>();
 
   rootProperty: FormProperty = null;
 
@@ -65,7 +67,6 @@ export class FormComponent implements OnChanges {
   ) { }
 
   ngOnChanges(changes: any) {
-    console.log(changes);
     if (changes.validators) {
       this.setValidators();
     }
@@ -82,10 +83,11 @@ export class FormComponent implements OnChanges {
       console.log(this.schema, changes.schema);
       SchemaPreprocessor.preprocess(this.schema);
       this.rootProperty = this.formPropertyFactory.createProperty(this.schema);
-      this.rootProperty.valueChanges.subscribe(value => { this.onChange.emit({value: value}); });
+      this.rootProperty.valueChanges.subscribe(value => { this.onChange.emit({ value: value }); });
+      this.rootProperty.errorsChanges.subscribe(errors => { this.onErrorsChange.emit({ errors: errors }); });
     }
 
-    if (this.schema && (changes.model || changes.schema )) {
+    if (this.schema && (changes.model || changes.schema)) {
       this.rootProperty.reset(this.model, false);
       this.cdr.detectChanges();
     }
