@@ -1,5 +1,5 @@
 {
-  "name": "angular2-schema-form",
+  "name": "angular2-schema-form-builder",
   "version": "1.0.0-beta.5",
   "description": "Angular2 Schema Form (DISCLAIMER: it is not related to angular-schema-form)",
   "main": "dist/index.js",
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/makinacorpus/angular2-schema-form"
+    "url": "git+https://github.com/jporley/angular2-schema-form"
   },
   "keywords": [
     "angularjs",
@@ -27,13 +27,14 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/makinacorpus/angular2-schema-form/issues"
+    "url": "https://github.com/jporley/angular2-schema-form/issues"
   },
   "contributors": [
     "Frank Bessou <fbessou@free.fr>",
     "Eric Brehault <ebrehault@gmail.com>",
     "Simon Bats <contact@simonbats.com>",
-    "Ramon Navarro Bosch <ramon.nb@gmail.com>"
+    "Ramon Navarro Bosch <ramon.nb@gmail.com>",
+    "Juan Porley <zporley@gmail.com>"
   ],
   "dependencies": {
     "body-parser": "^1.15.1",
