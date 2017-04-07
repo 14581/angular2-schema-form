@@ -8,7 +8,6 @@ import { ControlWidget } from '../../widget';
     <label [attr.for]="id" class="horizontal control-label">
         {{ schema.title }}
     </label>
-    <span *ngIf="schema.description" class="formHelp">{{schema.description}}</span>
 	<div class="checkbox">
 		<label class="horizontal control-label">
 			<input [formControl]="control" [attr.name]="name" [indeterminate]="control.value !== false && control.value !== true ? true :null" type="checkbox" [attr.disabled]="schema.readOnly">
@@ -18,4 +17,4 @@ import { ControlWidget } from '../../widget';
 	</div>
 </div>`
 })
-export class CheckboxWidget extends ControlWidget {}
+export class CheckboxWidget extends ControlWidget { }
