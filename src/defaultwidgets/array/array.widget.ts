@@ -15,7 +15,7 @@ import { ArrayLayoutWidget } from '../../widget';
     </button>
   </div>
 	<div *ngFor="let itemProperty of formProperty.properties; let i=index; trackBy:trackByIndex" style="position:relative">
-		<sf-form-element [formProperty]="itemProperty"></sf-form-element style="position:absolute">
+		<sf-form-element style="position:absolute" [formProperty]="itemProperty"></sf-form-element>
     <button (click)="removeItem(i)" class="btn btn-default array-remove-button" style="position:absolute;top:0px;right:0px;">
 			<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Remove
 		</button>
