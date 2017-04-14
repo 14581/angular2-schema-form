@@ -9,15 +9,17 @@ import { ArrayLayoutWidget } from '../../widget';
 		{{ schema.title }}
 	</label>
 	<span *ngIf="schema.description" class="formHelp">{{schema.description}}</span>
-	<div *ngFor="let itemProperty of formProperty.properties; let i=index; trackBy:trackByIndex">
-		<sf-form-element [formProperty]="itemProperty"></sf-form-element>
-		<button (click)="removeItem(i)" class="btn btn-default array-remove-button">
+  <div class="add-button-container">
+    <button (click)="addItem()" class="btn btn-default array-add-button">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+    </button>
+  </div>
+	<div *ngFor="let itemProperty of formProperty.properties; let i=index; trackBy:trackByIndex" style="position:relative">
+		<sf-form-element [formProperty]="itemProperty"></sf-form-element style="position:absolute">
+    <button (click)="removeItem(i)" class="btn btn-default array-remove-button" style="position:absolute;top:0px;right:0px;">
 			<span class="glyphicon glyphicon-minus" aria-hidden="true"></span> Remove
 		</button>
 	</div>
-	<button (click)="addItem()" class="btn btn-default array-add-button">
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
-	</button>
 </div>`
 })
 export class ArrayWidget extends ArrayLayoutWidget {
