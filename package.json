@@ -1,6 +1,6 @@
 {
   "name": "angular2-schema-form-builder",
-  "version": "1.0.0-beta.74",
+  "version": "1.0.0-beta.75",
   "description": "Angular2 Schema Form Builder (DISCLAIMER: it is not related to angular-schema-form)",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
